@@ -32,4 +32,4 @@ Contributions are welcome! If you have suggestions for new features, improvement
 
 ## License
 
-This project is licensed under the ISC license. See the [LICENSE](./LICENSE) file for more details.
+This project is licensed under the Apache license. See the [LICENSE](./LICENSE) file for more details.
