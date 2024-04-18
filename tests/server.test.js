@@ -51,13 +51,9 @@ describe('IP Validation Endpoint', () => {
 });
 
 beforeAll(async () => {
-	console.log("Connecting to MongoDB...");
 	await mongoose.connect(process.env.MONGODB_URI);
-	console.log("Connected to MongoDB.");
-});
+}, 30000);
 
 afterAll(async () => {
-	console.log("Disconnecting from MongoDB...");
 	await mongoose.connection.close();
-	console.log("Disconnected from MongoDB.");
 });

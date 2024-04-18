@@ -40,13 +40,24 @@ jobs:
         cache: 'npm'
         cache-dependency-path: '**/package-lock.json'
     
+    - name: Cache Node.js modules
+      uses: actions/cache@v4
+      with:
+        # npm cache files are stored in `~/.npm` on Linux/macOS
+        # https://docs.github.com/en/actions/guides/building-and-testing-nodejs
+        path: ~/.npm
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-
+          ${{ runner.OS }}-
+    
     - name: Install dependencies
       run: npm install
 
     - name: Run tests
       env:
-        MONGODB_URI: mongodb://myUser:myPassword@mongodb:27017/testdb
-      run: npm test
+        MONGODB_URI: mongodb://myUser:myPassword@mongodb:27017/testdb?authSource=admin
+      run: npm run test --ignore-scripts -- --coverage --runInBand
 
     - name: Check code style
       run: npm run lint
