@@ -60,4 +60,4 @@ afterAll(async () => {
 	console.log("Disconnecting from MongoDB...");
 	await mongoose.connection.close();
 	console.log("Disconnected from MongoDB.");
-}, 10000); // increases the default timeout to 10 seconds
+});
