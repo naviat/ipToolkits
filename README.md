@@ -27,7 +27,7 @@ The service currently exposes a simple endpoint at the root (/) that provides ba
 
 ## Getting Started
 
-- To get started with the IP Toolkit, clone this repository and follow the setup instructions provided in the [PREREQUISITES.md](./PREREQUISITES.md) and [README.md](./README.md) files. Ensure you have Docker and Kubernetes configured in your environment to deploy the service.
+- To get started with the IP Toolkit, clone this repository and follow the setup instructions provided in the [PREREQUISITES.md](./PREREQUISITES.md), [CICD.md](./CICD.md) and [README.md](./README.md) files. Ensure you have Terraform, helm, Docker and Kubernetes configured in your environment to deploy the service.
 - To run `docker-compose`, see the [INFRASTRUCTURE.md](./INFRASTRUCTURE.md) for more details.
 
 ## Contribution

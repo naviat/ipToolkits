@@ -1,6 +1,6 @@
 # Infrastructure Directory
 
-This file contains all necessary configurations and definitions for setting up and maintaining my application's infrastructure using industry best practices in Docker, Kubernetes, and continuous integration/continuous deployment (CI/CD) workflows (Terraform part for provisioning cluster is not included).
+This file contains all necessary configurations and definitions for setting up and maintaining my application's infrastructure using industry best practices in Terraform, Docker, Kubernetes, and continuous integration/continuous deployment (CI/CD) workflows.
 
 ## Docker
 
@@ -28,4 +28,6 @@ To further automate my deployment process, I utilize the ArgoCD Image Updater, a
 
 Alongside the main application, ArgoCD also manages the deployment of related services such as databases, Prometheus for monitoring, and Grafana for metrics visualization. By defining these components within our ArgoCD Applications, I maintain a cohesive deployment process that ensures all service components are updated and managed together. This holistic approach simplifies management and enhances the reliability of the system operations.
 
-## Kubernetes (TBD)
+## Terraform
+
+Refer to [TERRAFORM.md](./TERRAFORM.md)

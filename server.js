@@ -3,22 +3,24 @@ const express = require('express');
 const axios = require('axios');
 const promBundle = require('express-prom-bundle');
 const Lookup = require('./models/Lookup');
+const { swaggerDocs, swaggerDocument } = require('./swagger');
 
 const app = express();
+const port = process.env.PORT || 3000;
 app.use(express.json());
-app.use(promBundle({ includeMethod: true }));
+app.use(promBundle({ includeMethod: true })); // For expose prometheus metrics
 
 /**
-* Handles the root endpoint GET request.
-* Responds with the API version, current server time in UNIX timestamp, and a boolean indicating if running in Kubernetes.
-* 
-* @param {Object} req - The request object from the client.
-* @param {Object} res - The response object to send back the data.
-* @returns {void} - Sends a JSON response with version, date, and Kubernetes environment status.
-*/
+ * Handles the root GET request.
+ * This endpoint provides basic information about the API including its version, the current server time in UNIX timestamp format, and a boolean indicating if the server is running in a Kubernetes environment.
+ * 
+ * @param {Object} req - The request object from the client. Not used in this function but required by Express.js routing.
+ * @param {Object} res - The response object used to send back the API information.
+ * @returns {void} - Sends a JSON response with the API version, current server time, and Kubernetes environment status.
+ */
 app.get('/', (req, res) => {
 	res.json({
-		version: '0.1.0',
+		version: swaggerDocument.info.version,
 		date: Math.floor(Date.now() / 1000),
 		kubernetes: process.env.KUBERNETES === 'true'
 	});
@@ -53,14 +55,28 @@ app.get('/v1/tools/lookup', async (req, res) => {
 	}
 
 	try {
-		const response = await axios.get(`https://dns.google/resolve?name=${req.query.domain}&type=A`);
+		const url = `https://dns.google/resolve?name=${req.query.domain}&type=A`;
+		const response = await axios.get(url);
+
+		// Check if the domain was not found (Status: 3 indicates NXDOMAIN)
+		if (response.data.Status === 3) {
+			return res.status(404).json({ error: 'Domain not found' });
+		}
+
+		// Check if there are any IP addresses returned
+		if (!response.data.Answer) {
+			return res.status(404).json({ error: 'No IP addresses found for the domain' });
+		}
+
 		const ips = response.data.Answer.map(ans => ans.data);
 		await Lookup.create({ domain: req.query.domain, ips });
 		res.json({ domain: req.query.domain, ips });
 	} catch (error) {
+		console.error('Error fetching DNS data:', error);
 		res.status(500).json({ error: 'Failed to resolve domain', details: error.message });
 	}
 });
+
 
 /**
  * Handles the IP validation POST request.
@@ -91,4 +107,5 @@ app.get('/v1/history', async (req, res) => {
 	res.json(queries);
 });
 
+swaggerDocs(app, port);
 module.exports = app;

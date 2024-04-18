@@ -3,17 +3,18 @@ const mongoose = require('mongoose');
 const app = require('../server');
 
 let server;
+let port = 3000;
 
 /**
- * Make sure that your Express app (or whichever framework you're using) is correctly shut down after the tests.
+ * Make sure that Express app is correctly shut down after the tests.
  */
 beforeAll(() => {
-	server = app.listen(3000);  // Start your app on a test-specific port
+	server = app.listen(port);
 });
 
 afterAll(() => {
 	return new Promise(done => {
-		server.close(done);  // Close the server when your tests are done
+		server.close(done);
 	})
 });
 
