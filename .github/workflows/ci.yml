@@ -76,14 +76,10 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+    
+    - name: Build Docker image
+      run: docker build . -t naviat/iptoolkits:dev.${{ github.sha }}
 
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        file: Dockerfile
-        push: false
-        tags: docker.io/naviat/iptoolkits:dev.${{ github.sha }}
     - name: Scan the Docker image with Trivy
       uses: aquasecurity/trivy-action@master
       with:
@@ -91,6 +87,11 @@ jobs:
         format: 'table'
         exit-code: '1'  # Trivy will return a non-zero exit code if vulnerabilities are found
   
-    - name: Push to DockerHub
-      run: |
-        docker push docker.io/naviat/iptoolkits:dev.${{ github.sha }}
+    - name: Build and push Docker image
+      if: success()
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: Dockerfile
+        push: true
+        tags: docker.io/naviat/iptoolkits:dev.${{ github.sha }}
