@@ -1,0 +1,23 @@
+name: Terraform Documentation
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - infras/terraform/**
+jobs:
+  documentation:
+    name: 'Documentation'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone Repository
+      id: checkout
+      uses: actions/checkout@master
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        token: ${{ secrets.GH_ACCESS_TOKEN }}
+    - name: Terraform Documentation
+      uses: terraform-docs/gh-actions@v1.0.0
+      with:
+        working-dir: ./infras/terraform
+        config-file: terraform-docs.yml
+        git-push: true

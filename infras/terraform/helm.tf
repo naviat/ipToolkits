@@ -88,4 +88,3 @@ resource "helm_release" "logging" {
   depends_on = [null_resource.wait_for_ingress]
 }
 
-
