@@ -58,7 +58,7 @@ app.get('/v1/tools/lookup', async (req, res) => {
 		await Lookup.create({ domain: req.query.domain, ips });
 		res.json({ domain: req.query.domain, ips });
 	} catch (error) {
-		res.status(500).json({ error: 'Failed to resolve domain' });
+		res.status(500).json({ error: 'Failed to resolve domain', details: error.message });
 	}
 });
 
@@ -71,7 +71,7 @@ app.get('/v1/tools/lookup', async (req, res) => {
  * @returns {void} - Sends a JSON response with the original IP and a boolean indicating its validity.
  */
 app.post('/v1/tools/validate', (req, res) => {
-	const ip = req.body.ip;
+	const { ip } = req.body;
 	const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){2}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
 	const isValid = ipv4Regex.test(ip);
 	res.json({ ip, isValid });

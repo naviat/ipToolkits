@@ -23,6 +23,7 @@ The service currently exposes a simple endpoint at the root (/) that provides ba
 - **Frontend Interface**: Develop a frontend interface to provide an easier and more intuitive way for users to interact with the IP Toolkit services.
 - **Cleanup history API**: [Optional] Reject requests to `/v1/tools/lookup` API endpoint rejects requests for the same domain within 10 minutes.
 - **Tracing**: Enabling tracing with OpenTelemetry and integrating it with Grafana Beyla.
+- **CI Cache**: Improve the CI cache for npm and docker.
 
 ## Getting Started
 
