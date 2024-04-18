@@ -134,5 +134,6 @@ dist
 .terraform
 .terraform.lock.hcl
 .terraform.tfstate.lock.info
-terraform.tfstate
+*.tfstate
 terraform.tfstate.backup
+terraform.tfvars
