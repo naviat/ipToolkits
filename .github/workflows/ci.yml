@@ -7,7 +7,7 @@ on:
   create:
     tags:
       - sandbox.[0-9]{4}.[0-9]{1,2}.\d+$
-      - iptoolkits.[0-9]{4}.[0-9]{1,2}.\d+$
+      - prod.[0-9]{4}.[0-9]{1,2}.\d+$
 
 ### Ensures that only one CI task per branch/environment will run at a time ###
 concurrency:
