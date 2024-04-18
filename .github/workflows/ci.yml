@@ -72,6 +72,9 @@ jobs:
   
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
     if: (github.event.pull_request.merged == true) || (github.event_name == 'create' && startsWith(github.ref, 'refs/tags/'))
     needs: test
     outputs:
@@ -101,12 +104,12 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     
     - name: Build Docker image
-      run: docker build . -t naviat/iptoolkits:${{needs.build.outputs.output_tag}}
+      run: docker build . -t naviat/iptoolkits:${{ steps.set_tag.outputs.OUTPUT_TAG }}
 
     - name: Scan the Docker image with Trivy
       uses: aquasecurity/trivy-action@master
       with:
-        image-ref: 'docker.io/naviat/iptoolkits:${{needs.build.outputs.output_tag}}'
+        image-ref: 'docker.io/naviat/iptoolkits:${{ steps.set_tag.outputs.OUTPUT_TAG }}'
         format: 'table'
         exit-code: '1'  # Trivy will return a non-zero exit code if vulnerabilities are found
   
@@ -117,4 +120,4 @@ jobs:
         context: .
         file: Dockerfile
         push: true
-        tags: docker.io/naviat/iptoolkits:${{needs.build.outputs.output_tag}}
+        tags: docker.io/naviat/iptoolkits:${{ steps.set_tag.outputs.OUTPUT_TAG }}
