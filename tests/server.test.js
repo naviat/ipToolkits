@@ -12,7 +12,7 @@ describe('Domain Lookup Endpoint', () => {
 		const res = await request(app).get('/v1/tools/lookup?domain=google.com');
 		expect(res.statusCode).toEqual(200);
 		expect(res.body).toHaveProperty('ips');
-	}, 10000);
+	});
 });
 
 describe('History Endpoint', () => {
@@ -52,7 +52,7 @@ describe('IP Validation Endpoint', () => {
 
 beforeAll(async () => {
 	await mongoose.connect(process.env.MONGODB_URI);
-});
+}, 30000);
 
 afterAll(async () => {
 	await mongoose.connection.close();
