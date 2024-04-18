@@ -12,7 +12,7 @@ describe('Domain Lookup Endpoint', () => {
 		const res = await request(app).get('/v1/tools/lookup?domain=google.com');
 		expect(res.statusCode).toEqual(200);
 		expect(res.body).toHaveProperty('ips');
-	}, 10000);
+	});
 });
 
 describe('History Endpoint', () => {
@@ -54,7 +54,7 @@ beforeAll(async () => {
 	console.log("Connecting to MongoDB...");
 	await mongoose.connect(process.env.MONGODB_URI);
 	console.log("Connected to MongoDB.");
-}, 10000); // increases the default timeout to 10 seconds
+});
 
 afterAll(async () => {
 	console.log("Disconnecting from MongoDB...");
