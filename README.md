@@ -2,6 +2,8 @@
 
 The IP Toolkit is a RESTful API service designed to provide various IP-related tools and utilities. This service is built to run efficiently in containerized environments, including Kubernetes, and offers a range of endpoints for different functionalities.
 
+> <span style="color: red;">**IMPORTANT**</span>: Details for infrastructure in [INFRASTRUCTURE.md](./INFRASTRUCTURE.md).
+
 ## Features
 
 - **Version and Environment Info**: A root endpoint (`/`) that returns the current version of the API, the current timestamp, and a boolean indicating if the service is running in a Kubernetes environment.
@@ -24,7 +26,8 @@ The service currently exposes a simple endpoint at the root (/) that provides ba
 
 ## Getting Started
 
-To get started with the IP Toolkit, clone this repository and follow the setup instructions provided in the [PREREQUISITES.md](./PREREQUISITES.md) and [README.md](./README.md) files. Ensure you have Docker and Kubernetes configured in your environment to deploy the service.
+- To get started with the IP Toolkit, clone this repository and follow the setup instructions provided in the [PREREQUISITES.md](./PREREQUISITES.md) and [README.md](./README.md) files. Ensure you have Docker and Kubernetes configured in your environment to deploy the service.
+- To run `docker-compose`, see the [INFRASTRUCTURE.md](./INFRASTRUCTURE.md) for more details.
 
 ## Contribution
 
@@ -32,4 +35,4 @@ Contributions are welcome! If you have suggestions for new features, improvement
 
 ## License
 
-This project is licensed under the ISC license. See the [LICENSE](./LICENSE) file for more details.
+This project is licensed under the Apache license. See the [LICENSE](./LICENSE) file for more details.
