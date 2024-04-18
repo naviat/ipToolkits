@@ -58,7 +58,7 @@ jobs:
       env:
         MONGODB_URI: mongodb://myUser:myPassword@mongodb:27017/testdb?authMechanism=DEFAULT&authSource=admin
       run: |
-        telnet mongodb 27017
+        telnet localhost 27017
         npm run test --ignore-scripts -- --coverage --runInBand
 
     - name: Check code style
