@@ -15,6 +15,8 @@ jobs:
         image: mongo:7.0
         env:
           MONGO_INITDB_DATABASE: testdb
+          MONGO_INITDB_ROOT_USERNAME: myUser
+          MONGO_INITDB_ROOT_PASSWORD: myPassword
         ports:
           - 27017:27017
         options: >-
@@ -43,7 +45,7 @@ jobs:
 
     - name: Run tests
       env:
-        MONGODB_URI: mongodb://mongodb:27017/testdb
+        MONGODB_URI: mongodb://myUser:myPassword@mongodb:27017/testdb
       run: npm test
 
     - name: Check code style
