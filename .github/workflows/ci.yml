@@ -9,6 +9,11 @@ on:
       - sandbox.[0-9]{4}.[0-9]{1,2}.\d+$
       - iptoolkits.[0-9]{4}.[0-9]{1,2}.\d+$
 
+### Ensures that only one CI task per branch/environment will run at a time ###
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
