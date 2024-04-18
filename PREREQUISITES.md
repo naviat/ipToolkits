@@ -3,9 +3,13 @@
 ## Compatibility and requirements
 
 - UNIX/Linux or OS X environment
-- MongoDB Community 7.0
-- NodeJS 18.20.2
-- NPM 10.5.0
+- MongoDB Community v7.0
+- NodeJS v20.12.2
+- NPM v10.5.0
+- Terraform
+- kubectl
+- kind
+- helm
 
 ## Installing prerequisites
 
@@ -27,7 +31,7 @@ Follow these steps to install MongoDB Community Edition using Homebrew's brew pa
  brew update
  ```
 
-#### 3. To install MongoDB, run the following command in your macOS Terminal application
+#### 3. To install and start MongoDB, run the following command in your macOS Terminal application
 
  ```shell
  brew install mongodb-community@7.0
@@ -37,3 +41,7 @@ Follow these steps to install MongoDB Community Edition using Homebrew's brew pa
 ### NodeJS & NVM
 
  Following this [guide](https://tecadmin.net/install-nvm-macos-with-homebrew/)
+
+### Helm, kubectl, terraform
+
+ Following official document.

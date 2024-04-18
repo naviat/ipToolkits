@@ -36,7 +36,9 @@ To further automate my deployment process, I utilize the ArgoCD Image Updater, a
 
 Alongside the main application, ArgoCD also manages the deployment of related services such as databases, Prometheus for monitoring, and Grafana for metrics visualization. By defining these components within our ArgoCD Applications, I maintain a cohesive deployment process that ensures all service components are updated and managed together. This holistic approach simplifies management and enhances the reliability of the system operations.
 
-## Kubernetes (TBD) =============================
+## Terraform
+
+I will provision a local kind-cluster with pre-configured monitoring
 
 ## Local Testing Using Docker Compose
 

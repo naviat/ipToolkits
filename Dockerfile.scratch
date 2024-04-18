@@ -10,7 +10,7 @@ COPY --chown=node:node ["models/Lookup.js", "./models/Lookup.js"]
 FROM node:20.12.2-slim
 WORKDIR /app
 COPY --from=builder /app /app
-COPY --chown=node:node ["package.json", "package-lock.json", "server.js", "start.js", "./"]
+COPY --chown=node:node ["package.json", "package-lock.json", "server.js", "start.js", "swagger.js", "swagger.json", "./"]
 RUN npm install
 EXPOSE 3000
 CMD ["node", "start.js"]

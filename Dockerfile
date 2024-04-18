@@ -5,7 +5,7 @@ FROM cgr.dev/chainguard/node
 WORKDIR /usr/src/app
 
 # Copy the current directory contents into the container at /usr/src/app
-COPY --chown=node:node ["package.json", "package-lock.json", "server.js", "start.js", "./"]
+COPY --chown=node:node ["package.json", "package-lock.json", "server.js", "start.js", "swagger.js", "swagger.json", "./"]
 COPY --chown=node:node ["models/Lookup.js", "./models/Lookup.js"]
 
 # Install any needed packages specified in package.json
