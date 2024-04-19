@@ -3,8 +3,14 @@ const mongoose = require('mongoose');
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_URI)
-	.then(() => console.log('Successfully connected to MongoDB'))
-	.catch(err => console.log('MongoDB connection error:', err));
+	.then(() => {
+		console.log('Successfully connected to MongoDB');
+	})
+	.catch(err => {
+		console.error('MongoDB connection error:', err);
+		// Emit a SIGTERM signal to trigger graceful shutdown processes
+		process.kill(process.pid, 'SIGTERM');
+	});
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => console.log(`Server running on port ${port}`));
