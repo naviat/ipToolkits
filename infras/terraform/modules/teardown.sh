@@ -14,6 +14,6 @@ rm -f *.hcl
 rm -rf .terraform
 
 # Delete the Kind cluster
-kind delete cluster --name kind-stakefish
+kind delete cluster
 
 echo "Cleanup complete!"

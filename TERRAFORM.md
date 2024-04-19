@@ -20,13 +20,13 @@ This document to show up the way we use terraform to provision kind-cluster in l
 1. Provision terraform
 
     ```shell
-    cd infras/terraform
+    cd infras/terraform/modules
     ./deploy.sh
     ```
 
 1. Cleanup after finish
 
     ```shell
-    cd infras/terraform
-    ./cleanup.sh
+    cd infras/terraform/modules
+    ./teardown.sh
     ```

@@ -4,11 +4,15 @@ provider "helm" {
   }
 }
 
+provider "kubernetes" {
+  config_path = pathexpand(var.kubernetes_config_file)
+}
+
 resource "helm_release" "ingress_controller" {
   name       = "ingress"
   repository = "https://kubernetes.github.io/ingress-nginx"
   chart      = "ingress-nginx"
-  version    = "4.4.2" # latest 4.10.0
+  version    = "4.4.2"
 
   namespace        = var.ingress_controller_namespace
   create_namespace = true
@@ -42,7 +46,7 @@ resource "helm_release" "monitoring" {
   name       = "monitoring"
   repository = "https://prometheus-community.github.io/helm-charts"
   chart      = "kube-prometheus-stack"
-  version    = "45.4.0" # latest 58.1.3
+  version    = "45.4.0"
 
   namespace        = var.monitoring_namespace
   create_namespace = true
@@ -76,7 +80,7 @@ resource "helm_release" "logging" {
   name       = "logging"
   repository = "https://grafana.github.io/helm-charts"
   chart      = "loki-stack"
-  version    = "2.9.9" # latest 2.10.2
+  version    = "2.9.9"
 
   namespace        = var.monitoring_namespace
   create_namespace = true
@@ -87,4 +91,3 @@ resource "helm_release" "logging" {
 
   depends_on = [null_resource.wait_for_ingress]
 }
-

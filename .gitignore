@@ -137,3 +137,4 @@ dist
 *.tfstate
 terraform.tfstate.backup
 terraform.tfvars
+values.yaml
