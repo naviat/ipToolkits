@@ -7,7 +7,7 @@ sort:
   enabled: true 
 
 output:
-  file: README.md
+  file: ./infras/terraform/README.md
   mode: inject
   template: |-
     <!-- BEGIN_TF_DOCS -->
