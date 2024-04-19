@@ -20,6 +20,7 @@ The IP Toolkit is a RESTful API service designed to provide various IP-related t
 - **Cleanup history API**: [Optional] Reject requests to `/v1/tools/lookup` API endpoint rejects requests for the same domain within 10 minutes.
 - **Tracing**: Enabling tracing with OpenTelemetry and integrating it with Grafana Beyla.
 - **CI Cache**: Improve the CI cache for npm and docker.
+- **SSO** for all platforms.
 
 ## Getting Started
 

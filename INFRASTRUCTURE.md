@@ -2,6 +2,9 @@
 
 This file contains all necessary configurations and definitions for setting up and maintaining my application's infrastructure using industry best practices in Docker, Kubernetes, and continuous integration/continuous deployment (CI/CD) workflows (Terraform part for provisioning cluster is not included).
 
+- ArgoCD: <https://argocd.localhost> with GitHub (make sure to add [GitHub OAuth app](https://www.infracloud.io/blogs/enabling-sso-authentication-argo-cd/) and update your `.env` file)
+- Grafana: <https://monitoring.localhost> with default credentials: `admin/prom-operator`
+
 ## Docker
 
 This application uses 2 ways to build Docker images
