@@ -13,9 +13,9 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_helm"></a> [helm](#provider\_helm) | 2.13.1 |
-| <a name="provider_kind"></a> [kind](#provider\_kind) | 0.4.0 |
-| <a name="provider_null"></a> [null](#provider\_null) | 3.2.2 |
+| <a name="provider_helm"></a> [helm](#provider\_helm) | >= 2.12.1 |
+| <a name="provider_kind"></a> [kind](#provider\_kind) | >= 0.0.16 |
+| <a name="provider_null"></a> [null](#provider\_null) | >= 3.2.1 |
 
 ## Modules
 
