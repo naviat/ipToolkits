@@ -12,15 +12,13 @@ server:
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     tls: true
-  extraArgs:
-  - --insecure
 notifications:
   enabled: false
 configs:
   cm:
     create: true
     exec.enabled: true
-    timeout.reconciliation: 60s
+    timeout.reconciliation: 180s
     dex.config: >
       connectors:
         - type: github
@@ -32,6 +30,8 @@ configs:
           orgs:
             - name: DevOps-Corner
     url: https://${ARGO_URL}
+  params:
+    server.insecure: true
   rbac:
     policy.csv: |
       g, haidv.ict@gmail.com, role:admin

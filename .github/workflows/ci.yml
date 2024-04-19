@@ -119,5 +119,6 @@ jobs:
       with:
         context: .
         file: Dockerfile
+        platforms: linux/amd64,linux/arm64
         push: true
         tags: docker.io/naviat/iptoolkits:${{ steps.set_tag.outputs.OUTPUT_TAG }}
