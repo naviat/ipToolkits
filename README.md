@@ -2,11 +2,14 @@
 
 The IP Toolkit is a RESTful API service designed to provide various IP-related tools and utilities. This service is built to run efficiently in containerized environments, including Kubernetes, and offers a range of endpoints for different functionalities.
 
-> <span style="color: green;">**NOTE**</span>After setup `/etc/hosts` to use `.localhost` domain, you can access to use `https://iptoolkits.localhost/docs/`. [More detail in TERRAFORM.md](./TERRAFORM.md#installation)
+> [!IMPORTANT]
+> Be sure to read [our documentation][documentation::web]. It guides the initial setup of your mail server. After setup `/etc/hosts` to use `.localhost` domain, you can access using `https://iptoolkits.localhost/docs/`. [More detail in TERRAFORM.md](./TERRAFORM.md#installation)
 
-> <span style="color: red;">**IMPORTANT**</span>: Details for infrastructure in [INFRASTRUCTURE.md](./INFRASTRUCTURE.md).
+> [!IMPORTANT]
+> Details for infrastructure in [INFRASTRUCTURE.md](./INFRASTRUCTURE.md).
 
-> <span style="color: green;">**NOTE**</span>: You cannot see the updated docker image in the [ipToolkits-applications](https://github.com/naviat/ipToolkits-applications/blob/main/apps/iptoolkits/.argocd-source-iptoolkits-dev.yaml) repository, as my DockerHub account is free and I have exceeded the pull rate limit.
+> [!IMPORTANT]
+> You cannot see the updated docker image in the [ipToolkits-applications](https://github.com/naviat/ipToolkits-applications/blob/main/apps/iptoolkits/.argocd-source-iptoolkits-dev.yaml) repository, as my DockerHub account is free and I have exceeded the pull rate limit.
 
 ## Features
 
@@ -31,11 +34,12 @@ The IP Toolkit is a RESTful API service designed to provide various IP-related t
 - To get started with the IP Toolkit, clone this repository and follow the setup instructions provided in the [PREREQUISITES.md](./PREREQUISITES.md), [CICD.md](./CICD.md) and [README.md](./README.md) files. Ensure you have Terraform, helm, Docker and Kubernetes configured in your environment to deploy the service.
 - To run `docker-compose`, see the [INFRASTRUCTURE.md](./INFRASTRUCTURE.md) for more details.
 
-> <span style="color: red;">**IMPORTANT**</span>  I'm using Apple Silicon Macbook (M1 Pro), that why this project will have some tweak to run it in ARM chip. </span>
+> [!IMPORTANT]
+> I'm using an Apple Silicon Macbook (M1 Pro), that why this project will have some tweak to run it in ARM chip. </span>
 
 ## Contribution
 
-Contributions are welcome! If you have suggestions for new features, improvements, or find any issues, please open an issue or submit a pull request.
+Contributions are welcome! If you have suggestions for new features, or improvements, or find any issues, please open an issue or submit a pull request.
 
 ## License
 
