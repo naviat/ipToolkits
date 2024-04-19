@@ -11,39 +11,46 @@ resource "kind_cluster" "this" {
       role = "control-plane"
 
       kubeadm_config_patches = [
-        "kind: InitConfiguration\nnodeRegistration:\n  kubeletExtraArgs:\n    node-labels: \"ingress-ready=true\"\n"
+        <<-EOF
+        kind: InitConfiguration
+        nodeRegistration:
+          kubeletExtraArgs:
+            node-labels: "ingress-ready=true"
+        EOF
       ]
 
       extra_port_mappings {
         container_port = 80
         host_port      = 80
+        protocol       = "TCP"
       }
       extra_port_mappings {
         container_port = 443
         host_port      = 443
+        protocol       = "TCP"
       }
     }
 
     node {
       role = "worker"
-      container_path {
-        host_path      = "./shared-storage"
+      extra_mounts {
+        host_path      = "${path.module}/shared-storage"
         container_path = "/var/local-path-provisioner"
       }
     }
 
     node {
       role = "worker"
-      container_path {
-        host_path      = "./shared-storage"
+      extra_mounts {
+        host_path      = "${path.module}/shared-storage"
         container_path = "/var/local-path-provisioner"
       }
     }
 
     node {
       role = "worker"
-      container_path {
-        host_path      = "./shared-storage"
+      extra_mounts {
+        host_path      = "${path.module}/shared-storage"
         container_path = "/var/local-path-provisioner"
       }
     }

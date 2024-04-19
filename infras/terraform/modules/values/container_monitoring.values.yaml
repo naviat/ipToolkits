@@ -1,0 +1,28 @@
+metrics:
+  enabled: true
+container:
+  port: 8080
+  additionalArgs:
+    - --housekeeping_interval=10s                       # kubernetes default args
+    - --max_housekeeping_interval=15s
+    - --event_storage_event_limit=default=0
+    - --event_storage_age_limit=default=0
+    - --disable_metrics=percpu,process,sched,tcp,udp,referenced_memory    # enable only diskIO, cpu, floop memory, network, disk
+    - --docker_only
+  hostPaths:
+    - name: rootfs
+      path: "/"
+      mount: "/rootfs"
+      readOnly: true
+    - name: varrun
+      path: "/var/run"
+      readOnly: true
+    - name: sys
+      path: "/sys"
+      readOnly: true
+    - name: docker
+      path: "/var/lib/docker"
+      readOnly: true
+    - name: disk
+      path: "/dev/disk"
+      readOnly: true

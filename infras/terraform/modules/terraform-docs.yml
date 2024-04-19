@@ -1,0 +1,20 @@
+formatter: "md doc"
+
+recursive:
+  enabled: true
+
+sections:
+  hide-all: false 
+
+sort:
+  enabled: true 
+
+output:
+  file: README.md
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    {{ .Content }}
+    <!-- END_TF_DOCS -->
+
+
