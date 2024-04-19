@@ -6,10 +6,11 @@
 - MongoDB Community v7.0
 - NodeJS v20.12.2
 - NPM v10.5.0
-- Terraform
-- kubectl
-- kind
-- helm
+- [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/)
+- [helm](https://helm.sh/docs/intro/install/)
+- [pre-commit](https://pre-commit.com/)
 
 ## Installing prerequisites
 
@@ -41,7 +42,3 @@ Follow these steps to install MongoDB Community Edition using Homebrew's brew pa
 ### NodeJS & NVM
 
  Following this [guide](https://tecadmin.net/install-nvm-macos-with-homebrew/)
-
-### Helm, kubectl, terraform
-
- Following official document.

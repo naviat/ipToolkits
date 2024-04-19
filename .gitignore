@@ -139,4 +139,4 @@ terraform.tfstate.backup
 terraform.tfvars
 values.yaml
 git-creds.yaml
-shared-storages
+shared-storage/

@@ -11,10 +11,6 @@ The IP Toolkit is a RESTful API service designed to provide various IP-related t
 - **IPv4 Address Validation**: An endpoint to validate IPv4 addresses.
 - **Query History Retrieval**: An endpoint to retrieve the history of queries made to the service.
 
-## Current Capabilities
-
-The service currently exposes a simple endpoint at the root (/) that provides basic information about the API version, the current server time, and whether or not the service is running within a Kubernetes environment.
-
 ## TODO
 
 - **MongoDB Cluster in Kubernetes**: Transition the MongoDB database to a *clustered environment within Kubernetes, enabled SSL connection* to enhance scalability, security and reliability.
@@ -29,6 +25,7 @@ The service currently exposes a simple endpoint at the root (/) that provides ba
 
 - To get started with the IP Toolkit, clone this repository and follow the setup instructions provided in the [PREREQUISITES.md](./PREREQUISITES.md), [CICD.md](./CICD.md) and [README.md](./README.md) files. Ensure you have Terraform, helm, Docker and Kubernetes configured in your environment to deploy the service.
 - To run `docker-compose`, see the [INFRASTRUCTURE.md](./INFRASTRUCTURE.md) for more details.
+- I'm using Apple Silicon Macbook (M1 Pro), that why this project will have some tweak to run it in ARM chip.
 
 ## Contribution
 
