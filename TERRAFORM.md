@@ -2,7 +2,7 @@
 
 This document to show up the way we use terraform to provision kind-cluster in local machine. It provides a local kind-cluster with pre-configured ArgoCD, logging, monitoring (**seperate helm chart, suppose to use Grafana LGTM stack but it will complicate the project, then just install Grafana, Loki, Prometheus**).
 
-> You can view terrafomr in detail at [terraform docs for this repository](./infras/terraform/modules/README.md).
+> You can view terraform in detail at [terraform docs for this repository](./infras/terraform/modules/README.md).
 
 ## Dependencies
 

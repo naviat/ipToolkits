@@ -2,9 +2,11 @@
 
 The IP Toolkit is a RESTful API service designed to provide various IP-related tools and utilities. This service is built to run efficiently in containerized environments, including Kubernetes, and offers a range of endpoints for different functionalities.
 
-> After setup `/etc/hosts` to use `.localhost` domain, you can access to use `https://iptoolkits.localhost/docs/`. [More detail in TERRAFORM.md](./TERRAFORM.md#installation)
+> <span style="color: green;">**NOTE**</span>After setup `/etc/hosts` to use `.localhost` domain, you can access to use `https://iptoolkits.localhost/docs/`. [More detail in TERRAFORM.md](./TERRAFORM.md#installation)
 
 > <span style="color: red;">**IMPORTANT**</span>: Details for infrastructure in [INFRASTRUCTURE.md](./INFRASTRUCTURE.md).
+
+> <span style="color: green;">**NOTE**</span>: You cannot see the updated docker image in the [ipToolkits-applications](https://github.com/naviat/ipToolkits-applications/blob/main/apps/iptoolkits/.argocd-source-iptoolkits-dev.yaml) repository, as my DockerHub account is free and I have exceeded the pull rate limit.
 
 ## Features
 
