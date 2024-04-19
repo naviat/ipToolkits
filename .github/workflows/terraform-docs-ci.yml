@@ -16,5 +16,5 @@ jobs:
       uses: terraform-docs/gh-actions@v1.1.0
       with:
         working-dir: ./infras/terraform/modules
-        config-file: terraform-docs.yml
+        config-file: ./infras/terraform/modules/terraform-docs.yml
         git-push: true
