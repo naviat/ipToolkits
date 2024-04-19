@@ -30,3 +30,5 @@ This document to show up the way we use terraform to provision kind-cluster in l
     cd infras/terraform/modules
     ./teardown.sh
     ```
+
+After that, you can access to ArgoCD with: `https://argocd.localhost` and to Grafana with: `https://monitoring.localhost`
