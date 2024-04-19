@@ -1,8 +1,4 @@
 formatter: "md doc"
-
-recursive:
-  enabled: true
-
 sections:
   hide-all: false 
 
@@ -16,5 +12,3 @@ output:
     <!-- BEGIN_TF_DOCS -->
     {{ .Content }}
     <!-- END_TF_DOCS -->
-
-
