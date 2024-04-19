@@ -17,6 +17,6 @@ jobs:
     - name: Terraform Documentation
       uses: terraform-docs/gh-actions@v1.1.0
       with:
-        working-dir: ./infras/terraform
+        working-dir: ./infras/terraform/modules
         config-file: terraform-docs.yml
         git-push: true
