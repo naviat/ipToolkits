@@ -25,7 +25,8 @@ The IP Toolkit is a RESTful API service designed to provide various IP-related t
 
 - To get started with the IP Toolkit, clone this repository and follow the setup instructions provided in the [PREREQUISITES.md](./PREREQUISITES.md), [CICD.md](./CICD.md) and [README.md](./README.md) files. Ensure you have Terraform, helm, Docker and Kubernetes configured in your environment to deploy the service.
 - To run `docker-compose`, see the [INFRASTRUCTURE.md](./INFRASTRUCTURE.md) for more details.
-- I'm using Apple Silicon Macbook (M1 Pro), that why this project will have some tweak to run it in ARM chip.
+
+> <span style="color: red;">**IMPORTANT**</span>  I'm using Apple Silicon Macbook (M1 Pro), that why this project will have some tweak to run it in ARM chip. </span>
 
 ## Contribution
 
