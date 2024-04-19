@@ -32,7 +32,7 @@ helm upgrade --install argocd argoproj/argo-cd -f values.yaml -n argocd
 # Bootstrap app of apps
 kubectl apply -f values/application-dev.yaml -n argocd
 kubectl apply -f git-creds.yaml -n argocd
-kubectl create secret docker-registry regcred \
+kubectl get secret regcred || kubectl create secret docker-registry regcred \
 	--docker-server=https://index.docker.io/v1/ \
 	--docker-username=${DOCKERHUB_USER} \
 	--docker-password=${DOCKERHUB_PAT} \
