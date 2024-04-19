@@ -2,8 +2,6 @@ name: Terraform
 on:
   pull_request:
     branches: [main]
-    paths:
-      - infras/terraform/**
 jobs:
   documentation:
     runs-on: ubuntu-latest
