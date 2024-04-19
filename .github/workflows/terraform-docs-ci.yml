@@ -1,4 +1,4 @@
-name: Terraform
+name: Terraform Document
 on:
   pull_request:
     branches: [main]
