@@ -1,5 +1,16 @@
 # Infrastructure Directory
 
+# Table of contents
+1. [Docker](#docker)
+2. [GitOps with Helm and ArgoCD](#gitops-with-helm-and-argocd)
+    1. [Helm Charts Repository](#helm-charts-repository)
+    2. [Continuous Deployment with ArgoCD and ArgoCD Image Updater](#continuous-deployment-with-argocd-and-argocd-image-updater)
+       1. [Integration of ArgoCD Image Updater](#integration-of-argocd-image-updater)
+       2. [Managing Dependencies](#managing-dependencies)
+3. [Terraform](#terraform)
+4. [Local Testing Using Docker Compose](#local-testing-using-docker-compose)
+   1. [Steps to Run Locally](#steps-to-run-locally)
+
 This file contains all necessary configurations and definitions for setting up and maintaining my application's infrastructure using industry best practices in Docker, Kubernetes, and continuous integration/continuous deployment (CI/CD) workflows (Terraform part for provisioning cluster is not included).
 
 - ArgoCD: <https://argocd.localhost> with GitHub (make sure to add [GitHub OAuth app](https://www.infracloud.io/blogs/enabling-sso-authentication-argo-cd/) and update your `.env` file)
@@ -19,7 +30,7 @@ This application uses 2 ways to build Docker images
 
 ![alt text](images/cicd.png "GitOps")
 
-- For the deployment process, I divide it into multiple environments as illustrated in the model below:
+- For the deployment process, I divided it into multiple environments as illustrated in the model below:
 
 ![alt text](images/flow.png "Deployment process")
 
@@ -37,11 +48,11 @@ To further automate my deployment process, I utilize the ArgoCD Image Updater, a
 
 #### Managing Dependencies
 
-Alongside the main application, ArgoCD also manages the deployment of related services such as databases, Prometheus for monitoring, and Grafana for metrics visualization. By defining these components within our ArgoCD Applications, I maintain a cohesive deployment process that ensures all service components are updated and managed together. This holistic approach simplifies management and enhances the reliability of the system operations.
+Alongside the main application, ArgoCD also manages the deployment of related services such as databases, Prometheus for monitoring, and Grafana for metrics visualization. By defining these components within our ArgoCD Applications, I maintain a cohesive deployment process that ensures all service components are updated and managed together. This holistic approach simplifies management and enhances the reliability of the system's operations.
 
 ## Terraform
 
-I will provision a local kind-cluster with pre-configured monitoring
+I will provision a local `kind-cluster` with pre-configured monitoring. Follow [this document](./TERRAFORM.md) for more detail.
 
 ## Local Testing Using Docker Compose
 
