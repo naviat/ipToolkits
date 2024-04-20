@@ -1,8 +1,12 @@
 # Terraform in local kind-cluster
 
-This document to show up the way we use terraform to provision kind-cluster in local machine. It provides a local kind-cluster with pre-configured ArgoCD, logging, monitoring (**seperate helm chart, suppose to use Grafana LGTM stack but it will complicate the project, then just install Grafana, Loki, Prometheus**).
+This document shows the way we use Terraform to provision kind-cluster in a local machine. It provides a local kind-cluster with pre-configured ArgoCD, logging, and monitoring (**separate helm chart, supposed to use Grafana LGTM stack but it will complicate the project, then just install Grafana, Loki, Prometheus**).
 
-> You can view terraform in detail at [terraform docs for this repository](./infras/terraform/modules/README.md).
+> You can view Terraform in detail at [terraform docs for this repository](./infras/terraform/modules/README.md).
+
+
+> [!IMPORTANT]
+> **For the ipToolkits application domain, the ingress controller is set with localhost automatically, [see more](https://github.com/naviat/ipToolkits/blob/main/infras/terraform/modules/values/ingress_controller.values.yaml). After deploying application by ArgoCD, you can access to the application by domain <https://iptoolkits.localhost>**
 
 ## Dependencies
 
@@ -34,3 +38,4 @@ This document to show up the way we use terraform to provision kind-cluster in l
     ```
 
 After that, you can access to ArgoCD with: `https://argocd.localhost` and to Grafana with: `https://monitoring.localhost`
+
