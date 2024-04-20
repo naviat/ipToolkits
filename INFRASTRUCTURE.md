@@ -22,9 +22,11 @@ This file contains all necessary configurations and definitions for setting up a
 
 This application uses 2 ways to build Docker images
 
-- **By [Wolfi](https://github.com/wolfi-dev) docker based**, a security-first, minimal base image (`Dockerfile`). These images are designed to provide a secure foundation, minimizing vulnerabilities that are common in more bloated base images.
+- **By [Wolfi](https://github.com/wolfi-dev) docker based**, a security-first, minimal base image (`Dockerfile`). These images are designed to provide a secure foundation, minimizing vulnerabilities that are common in more bloated base images. There is no CVE for this docker image.
 
 - **By multi-stage docker image**, build from scratch with `Dockerfile.scratch`. If you want to build from scratch, use `docker-compose.scratch.yml` and run `docker-compose  -f docker-compose.scratch.yml up --build`
+
+![alt text](images/no-cve.png "Docker without CVE")
 
 ## GitOps with Helm and ArgoCD
 

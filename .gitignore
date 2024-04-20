@@ -137,6 +137,7 @@ dist
 *.tfstate
 terraform.tfstate.backup
 terraform.tfvars
+terraform.plan
 values.yaml
 git-creds.yaml
 shared-storage/
