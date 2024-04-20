@@ -1,6 +1,7 @@
 # Infrastructure Directory
 
 # Table of contents
+
 1. [Docker](#docker)
 2. [GitOps with Helm and ArgoCD](#gitops-with-helm-and-argocd)
     1. [Helm Charts Repository](#helm-charts-repository)
@@ -8,6 +9,7 @@
        1. [Integration of ArgoCD Image Updater](#integration-of-argocd-image-updater)
        2. [Managing Dependencies](#managing-dependencies)
 3. [Terraform](#terraform)
+   1. [Monitoring](#montioring)
 4. [Local Testing Using Docker Compose](#local-testing-using-docker-compose)
    1. [Steps to Run Locally](#steps-to-run-locally)
 
@@ -36,7 +38,12 @@ This application uses 2 ways to build Docker images
 
 ### Helm Charts Repository
 
-I manage the deployment configurations of this application using Helm charts. These charts are stored in a separate [Git repository] to separate code from configuration and to enhance security and maintainability.
+I manage the deployment configurations of this application using Helm charts. These charts are stored in a separate [Git repository] to separate code from configuration and to enhance security and maintainability. We are plan to deploy 4 helm charts:
+
+- Argo Image Updater
+- MongoDB
+- ipToolkits application
+- Reloader
 
 ### Continuous Deployment with ArgoCD and ArgoCD Image Updater
 
@@ -53,6 +60,15 @@ Alongside the main application, ArgoCD also manages the deployment of related se
 ## Terraform
 
 I will provision a local `kind-cluster` with pre-configured monitoring. Follow [this document](./TERRAFORM.md) for more detail.
+
+### Monitoring
+
+Beside `kind` cluster, this project include terrafomr code to provision:
+
+- [kube-prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) (prometheus, grafana, alert manager)
+- [Nginx ingress controller](https://kubernetes.github.io/ingress-nginx)
+- [cAdvisor](https://ckotzbauer.github.io/helm-charts)
+- [Loki stack](https://github.com/grafana/helm-charts/tree/main/charts/loki-stack)
 
 ## Local Testing Using Docker Compose
 
