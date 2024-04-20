@@ -31,7 +31,7 @@ resource "null_resource" "wait_for_ingress" {
 
   provisioner "local-exec" {
     command = <<EOF
-      printf "\nWaiting for the nginx ingress controller...\n"
+      printf "....Waiting for the nginx ingress controller..."
       kubectl wait --namespace ${helm_release.ingress_controller.namespace} \
         --for=condition=ready pod \
         --selector=app.kubernetes.io/component=controller \
