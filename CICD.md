@@ -38,4 +38,4 @@ To deploy to Production, use tag `{project_name}.{year}.{week}.{deployment_numbe
 
 ## ArgoCD
 
-I will use localhost ArgoCD as is, this deployment will go with this repository.
+I will use localhost ArgoCD as is, this deployment will go with this repository. **You can now log in to ArgoCD using your GitHub username, but you need to update RBAC for your account and your GitHub OAuth app in your GitHub organization.**
