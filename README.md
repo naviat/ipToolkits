@@ -29,9 +29,10 @@ The IP Toolkit is a RESTful API service designed to provide various IP-related t
 - **Frontend Interface**: Develop a frontend interface to provide an easier and more intuitive way for users to interact with the IP Toolkit services.
 - **Cleanup history API**: [Optional] Reject requests to `/v1/tools/lookup` API endpoint rejects requests for the same domain within 10 minutes.
 - **Tracing**: Enabling tracing with OpenTelemetry and integrating it with Grafana Beyla.
-- **CI Cache**: Improve the CI cache for npm and docker.
+- **CI Cache** [DONE]: Improve the CI cache for npm and docker.
 - **SSO** for all platforms.
 - **Terratest**: update terratest for current terraform, also expand current terraform code to use Terragrunt if moving to any cloud provider with multiple services.
+- **Autoscaling**: apply autoscaling using KEDA along with ClusterScaler/Karpenter.
 
 ## Getting Started
 
