@@ -141,3 +141,4 @@ terraform.plan
 values.yaml
 git-creds.yaml
 shared-storage/
+.idea
