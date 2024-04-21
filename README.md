@@ -33,6 +33,7 @@ The IP Toolkit is a RESTful API service designed to provide various IP-related t
 - **SSO** for all platforms.
 - **Terratest**: update terratest for current terraform, also expand current terraform code to use Terragrunt if moving to any cloud provider with multiple services.
 - **Autoscaling**: apply autoscaling using KEDA along with ClusterScaler/Karpenter.
+- **Alerting**: integrate with Grafana OnCall to establish a 3-level support system.
 
 ## Getting Started
 
