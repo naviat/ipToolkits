@@ -85,9 +85,11 @@ My `docker-compose.yml` file is configured to start all the services our applica
 1. **Start Services**: Run the following command to start all services defined in the Docker Compose configuration file:
 
    ```shell
-   docker-compose up -d --build
+   docker compose up -d --build
    ```
 
-1. **Verify the Services**: Ensure that all containers are up and running correctly. You can check the status of the containers using: `docker-compose ps`
+   If you want to run application for multistage docker image version, run `docker compose -f docker-compose.scratch.yml up -d --build`
 
-1. **Stop and Remove Services**: When you are done, you can stop and remove all the services using: `docker-compose down`
+1. **Verify the Services**: Ensure that all containers are up and running correctly. You can check the status of the containers using: `docker compose ps`
+
+1. **Stop and Remove Services**: When you are done, you can stop and remove all the services using: `docker compose down`
