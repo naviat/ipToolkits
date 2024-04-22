@@ -4,7 +4,6 @@ This document shows the way we use Terraform to provision kind-cluster in a loca
 
 > You can view Terraform in detail at [terraform docs for this repository](./infras/terraform/modules/README.md).
 
-
 > [!IMPORTANT]
 > **For the ipToolkits application domain, the ingress controller is set with localhost automatically, [see more](https://github.com/naviat/ipToolkits/blob/main/infras/terraform/modules/values/ingress_controller.values.yaml). After deploying application by ArgoCD, you can access to the application by domain <https://iptoolkits.localhost>**
 
@@ -30,6 +29,10 @@ This document shows the way we use Terraform to provision kind-cluster in a loca
     ./deploy.sh
     ```
 
+1. Create your GitHub OAuth app from your organization (here is my DevOps-Corner Org)
+
+![alt text](images/github-oauth-app.png "Github App config")
+
 1. Cleanup after finish
 
     ```shell
@@ -38,4 +41,3 @@ This document shows the way we use Terraform to provision kind-cluster in a loca
     ```
 
 After that, you can access to ArgoCD with: `https://argocd.localhost` and to Grafana with: `https://monitoring.localhost`
-
